@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.atguigu.ssm.mapper.EmployeeMapper">
+
+    <!--List<Employee> getAllEmployee();-->
+    <select id="getAllEmployee" resultType="Employee">
+        select * from t_emp
+    </select>
+
+    <insert id="save" useGeneratedKeys="true" keyProperty="empId" parameterType="Employee">
+        insert into t_emp values (null,#{empName},#{age},#{gender},#{email})
+    </insert>
+
+    <delete id="delete">
+        delete from t_emp where emp_id=#{empId}
+    </delete>
+
+    <select id="getEmployeeById" resultType="Employee">
+        select * from t_emp where emp_id=#{empId}
+    </select>
+
+<!--    UPDATE t_emp SET emp_name = "a",age=6,gender=1,email="125@qq.com" WHERE emp_id = 2-->
+<!--    修改数据对象+Employee{empId=null, empName='ccccccc', age=null, gender='null', email=''}
+-->
+    <update id="updateEmployee" parameterType="Employee">
+        update t_emp
+        set emp_name=#{empName},
+            age=#{age},
+            gender=#{gender},
+            email=#{email}
+        where emp_id=#{empId}
+    </update>
+
+</mapper>
