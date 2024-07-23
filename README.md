@@ -1,9 +1,5 @@
-基于JAVA-WEB开发的书城项目。
-没有使用框架，采用servlet和JDBC进行开发
-实现了用户的注册、登陆、支付、管理员队图书的登录、修改、删除，以及购物车的、修改、删除
-工具：idea
-数据库：MySQL
-采用servlet和JDBC进行开发
+网上图书商城。
+#基于ssm框架的网上图书商城，使用mysql数据库，前端页面采用RESTful风格。 #本项目主要是用来练习ssm框架整合，实现从实现图书和图书分类的增删改查。
 
 username=root
 password=hsp
